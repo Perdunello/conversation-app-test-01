@@ -12,10 +12,9 @@
   border: 1px solid black;
   background: white;
   padding: 20px;
-
-  &:hover {
-    background: lightgrey;
-  }
+}
+.tab:hover {
+  background: lightgrey;
 }
 
 .active {
@@ -28,15 +27,15 @@
     width: 100px;
   }
 }
-
 @media (max-width: 450px) {
   .tab {
     padding: 15px;
   }
 }
-
 @media (max-width: 384px) {
   .tab {
     padding: 5px;
   }
 }
+
+/*# sourceMappingURL=Conversation.module.css.map */

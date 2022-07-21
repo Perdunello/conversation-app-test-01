@@ -14,16 +14,22 @@ function App() {
     const usd = useSelector(state => state.conversation.usd)
     const eur = useSelector(state => state.conversation.eur)
     const pln = useSelector(state => state.conversation.pln)
+    const isRejected = useSelector(state => state.conversation.isRejected)
     useEffect(() => {
         dispatch(getCurrenciesRequest())
     }, [dispatch])
     if (!fetchedData) {
         return <div className='loading'><Preloader/></div>
     }
+    if (isRejected) {
+        return <div className='error'>Something went wrong...</div>
+    }
     return (
+
         <div className="App">
             <Conversation/>
             <Routes>
+                <Route path={'/'} className={styles.tab} element={<Tab currency={usd}/>}/>
                 <Route path={'/tab1'} className={styles.tab} element={<Tab currency={usd}/>}/>
                 <Route path={'/tab2'} className={styles.tab} element={<Tab currency={eur}/>}/>
                 <Route path={'/tab3'} className={styles.tab} element={<Tab currency={pln}/>}/>

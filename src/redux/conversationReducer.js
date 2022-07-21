@@ -52,6 +52,7 @@ const setEur = (payload) => {
 const setPln = (payload) => {
     return {type: SET_PLN, payload}
 }
+
 export const getCurrenciesRequest = () => {
     return {type: GET_CURRENCIES_REQUEST}
 }
@@ -72,7 +73,6 @@ function* getCurrencies() {
             const pln = yield call(API.getPln)
             if (pln.status === 200) {
                 yield put(setPln(pln.data.rates.PLN))
-                yield put(setFetchedData())
             } else {
                 yield put(setRejected())
             }
@@ -82,6 +82,7 @@ function* getCurrencies() {
     } else {
         yield put(setRejected())
     }
+    yield put(setFetchedData())
 }
 
 

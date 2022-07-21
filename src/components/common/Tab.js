@@ -16,10 +16,15 @@ const Tab = ({currency}) => {
         }
     }
     return <div className={styles.mainWrapper}>
-        <div className={styles.inputWrapper}>
-            <input className={styles.input} defaultValue='1' ref={ref} type="number" onKeyDown={handleKeyDown}/>
+        <div className={styles.content}>
+            <div className={styles.inputWrapper}>
+                <input defaultValue='1' ref={ref} type="number" onKeyDown={handleKeyDown}/>
+            </div>
+            <div>
+                <input className={styles.foreignCurrency} type="number" disabled={true}
+                       value={(Math.round(currencyValue * 10000) / 10000)}/>
+            </div>
         </div>
-        {Math.round(currencyValue * 10000) / 10000}
         <div>
             <button onClick={count}>Press</button>
         </div>

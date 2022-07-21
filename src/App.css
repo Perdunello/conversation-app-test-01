@@ -3,15 +3,25 @@
 }
 
 .App {
-    padding: 100px ;
+    padding: 100px;
     text-align: center;
 }
 
 html {
     height: 100%;
+    background: grey;
 }
-
 .loading {
     display: flex;
     justify-content: center;
+}
+
+.error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: red;
+    font-size: 30px;
 }

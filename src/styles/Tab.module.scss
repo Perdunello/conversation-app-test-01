@@ -1,0 +1,23 @@
+.mainWrapper{
+  margin-top: 50px;
+  padding: 50px;
+  background: yellow;
+}
+.inputWrapper{
+  text-align: center;
+}
+.input{
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+}
+@media (max-width: 540px) {
+  .input{
+    width: 170px;
+  }
+}
+@media (max-width: 540px) {
+  .input{
+    width: 120px;
+  }
+}
